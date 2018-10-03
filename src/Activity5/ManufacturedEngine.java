@@ -33,36 +33,36 @@ public class ManufacturedEngine implements Engine {
     driveTrain = driTrain;
   }
 
-  public void setEngineCylinders(int engineCylinders){
+  public void setEngineCylinders(int engineCylinders) {
     this.engineCylinders = engineCylinders;
   }
 
-  public void setEngineManufacturedDate(Date engineManufacturedDate){
+  public void setEngineManufacturedDate(Date engineManufacturedDate) {
     this.engineManufacturedDate = engineManufacturedDate;
   }
 
-  public void setEngineManufacturer(String engineManufacturer){
+  public void setEngineManufacturer(String engineManufacturer) {
     this.engineManufacturer = engineManufacturer;
   }
 
-  public void setEngineMake(String engineMake){
+  public void setEngineMake(String engineMake) {
     this.engineMake = engineMake;
   }
 
-  public void setEngineModel(String engineModel){
+  public void setEngineModel(String engineModel) {
     this.engineModel = engineModel;
   }
 
-  public void setDriveTrain(String driveTrain){
+  public void setDriveTrain(String driveTrain) {
     this.driveTrain = driveTrain;
   }
 
-  public void setEngineType(String fuel){
+  public void setEngineType(String fuel) {
     engineType = fuel;
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "Engine Manufacturer : " + engineManufacturer +
         "\nEngine Manufactured : " + engineManufacturedDate +
         "\nEngine Make         : " + engineMake +
@@ -72,7 +72,12 @@ public class ManufacturedEngine implements Engine {
         "\nDrive Train         : " + driveTrain;
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     ManufacturedEngine manu1 = new ManufacturedEngine();
+    ManufacturedEngine manu2 = new ManufacturedEngine("Honda", new Date(112, 0, 3, 7, 13, 19), "H-Series", "H23A1", 4,
+        "88 AKI", "2WD: Two-Wheel Drive");
+
+    System.out.println(manu1);
+    System.out.println("\n" + manu2);
   }
 }
