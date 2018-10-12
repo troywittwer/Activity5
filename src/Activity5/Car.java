@@ -17,12 +17,11 @@ public class Car extends Vehicle {
   }
 
   Car(Date vehicleManufacturedDate, String vehicleManufacturer, String vehicleMake,
-      String vehicleModel, String chassisName, String vehicleType, String driveTrain,
-      String engineManufacturer, Date engineManufacturedDate, String engineMake, String engineModel,
-      int engineCylinders, String engineType, Feature[] feature, int carAxle) {
+      String vehicleModel, VehicleChassis chassisName, String vehicleType, String driveTrain,
+      ManufacturedEngine myEngine, Feature[] feature, int carAxle) {
     super(vehicleManufacturedDate, vehicleManufacturer, vehicleMake, vehicleModel, chassisName,
-        vehicleType, driveTrain, engineManufacturer, engineManufacturedDate, engineMake,
-        engineModel, engineCylinders, engineType);
+        vehicleType, driveTrain, myEngine);
+
     for (int i = 0; i < feature.length; i++) {
       this.feature[i] = feature[i];
     }
@@ -32,38 +31,37 @@ public class Car extends Vehicle {
   public String getInteriorFeatures() {
     String output = "Interior Features   : ";
 
-    ArrayList<Feature> intArray = new ArrayList<Feature>();
+    ArrayList<Feature> interArray = new ArrayList<Feature>();
     for (Feature elem : feature) {
       if (elem instanceof InteriorFeature) {
-        intArray.add(elem);
+        interArray.add(elem);
       }
     }
 
-    for (int i = 0; i < intArray.size(); i++) {
+    for (int i = 0; i < interArray.size(); i++) {
       if (i != 0) {
         output += "\n                    : ";
       }
-      output += intArray.get(i).toString();
+      output += interArray.get(i).toString();
     }
-
     return output;
   }
 
   public String getExteriorFeatures() {
     String output = "Exteriror Features  : ";
 
-    ArrayList<Feature> extArray = new ArrayList<Feature>();
+    ArrayList<Feature> exterArray = new ArrayList<Feature>();
     for (Feature elem : feature) {
       if (elem instanceof ExteriorFeature) {
-        extArray.add(elem);
+        exterArray.add(elem);
       }
     }
 
-    for (int i = 0; i < extArray.size(); i++) {
+    for (int i = 0; i < exterArray.size(); i++) {
       if (i != 0) {
         output += "\n                    : ";
       }
-      output += extArray.get(i).toString();
+      output += exterArray.get(i).toString();
     }
 
     return output;
@@ -71,12 +69,26 @@ public class Car extends Vehicle {
 
   @Override
   public String toString() {
+    /*
     return super.toString() +
         "\n" + getInteriorFeatures() +
         "\n" + getExteriorFeatures() +
         "\nCar Axle            : " + carAxle;
-  }
+    */
+    String output = super.toString() + "\nFeatures            : ";
 
+    for (int i = 0; i < feature.length && feature[i] != null; i++) {
+      if (i == 0) {
+        output += feature[i].toString();
+      } else {
+        output += "\n                    : " + feature[i].toString();
+      }
+    }
+    output += "\nCar Axle            : " + carAxle;
+
+    return output;
+  }
+/*
   public static void main(String[] args) {
     Feature[] features = new Feature[4];
 
@@ -94,4 +106,5 @@ public class Car extends Vehicle {
     System.out.println();
     System.out.println(car2);
   }
+  */
 }

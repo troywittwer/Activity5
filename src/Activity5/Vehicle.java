@@ -55,19 +55,22 @@ public class Vehicle implements Engine, Chassis {
    * @param engineCylinders the number of cylinders in the engine
    * @param engineType the type of engine
    */
-  Vehicle(Date vehicleManufacturedDate, String vehicleManufacturer, String vehicleMake,
-      String vehicleModel, String chassisName, String vehicleType, String driveTrain,
-      String engineManufacturer, Date engineManufacturedDate, String engineMake, String engineModel,
-      int engineCylinders, String engineType) {
+  Vehicle(Date vehicleManufacturedDate,
+      String vehicleManufacturer,
+      String vehicleMake,
+      String vehicleModel,
+      VehicleChassis vehicleFrame,
+      String vehicleType,
+      String driveTrain,
+      ManufacturedEngine myEngine) {
     this.vehicleManufacturedDate = vehicleManufacturedDate;
     this.vehicleManufacturer = vehicleManufacturer;
     this.vehicleMake = vehicleMake;
     this.vehicleModel = vehicleModel;
-    vehicleFrame = new VehicleChassis(chassisName);
+    this.vehicleFrame = vehicleFrame;
     this.vehicleType = vehicleType;
     this.driveTrain = driveTrain;
-    vehicleEngine = new ManufacturedEngine(engineManufacturer, engineManufacturedDate, engineMake,
-        engineModel, engineCylinders, engineType, driveTrain);
+    vehicleEngine = myEngine;
   }
 
   public Date getVehicleManufacturedDate() {
@@ -146,24 +149,8 @@ public class Vehicle implements Engine, Chassis {
         "\nVehicle Model       : " + vehicleModel +
         "\nVehicleType         : " + vehicleType + "\n" + vehicleEngine.toString();
   }
+/*
 
-  /**
-   * Tests the Vehicle class by creating two instances of the Vehicle class: one using the default
-   * constructor and one using the custom info constructor.
-   *
-   * Note: I wasn't sure how to structure the dates based on the output of the step 9 instructions.
-   * The Vehicle instance using the default constructor clearly has the same dates as the Vehicle
-   * instance using the overloaded constructor as far as the month, day, hour, minute, and seconds,
-   * but the year is different. This would be a quick fix for the Vehicle instance using the
-   * overloaded constructor (just modify the year variable from 115 to 112), but then I realized the
-   * default constructor's contents are both different, meaning they couldn't have both used the
-   * new Date() instantiation. The copyright at footer of each page states a date of 2015, so
-   * maybe each 2015 date is meant to be a new Date() instantiation. I'm not really sure what to
-   * make of this.
-   *
-   * @param args arguments received from the command line if the user chosoes to run the program
-   * from there.
-   */
   public static void main(String[] args) {
     Vehicle veh1 = new Vehicle();
     Vehicle veh2 = new Vehicle(new Date(115, 0, 3, 7, 13, 19), "Honda", "Honda", "Prelude",
@@ -173,4 +160,5 @@ public class Vehicle implements Engine, Chassis {
     System.out.println(veh1 + "\n");
     System.out.println(veh2);
   }
+  */
 }

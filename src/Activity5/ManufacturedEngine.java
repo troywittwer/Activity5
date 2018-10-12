@@ -22,8 +22,19 @@ public class ManufacturedEngine implements Engine {
     driveTrain = "2WD: Two-Wheel Drive";
   }
 
+  ManufacturedEngine(String engManu, Date engManuDate, String engMake, String engModel,
+      String engType, int engCyl, String driTrain) {
+    engineManufacturer = engManu;
+    engineManufacturedDate = engManuDate;
+    engineMake = engMake;
+    engineModel = engModel;
+    engineCylinders = engCyl;
+    engineType = engType;
+    driveTrain = driTrain;
+  }
+
   ManufacturedEngine(String engManu, Date engManuDate, String engMake, String engModel, int engCyl,
-      String engType, String driTrain) {
+      String engType, String driTrain){
     engineManufacturer = engManu;
     engineManufacturedDate = engManuDate;
     engineMake = engMake;
@@ -71,7 +82,7 @@ public class ManufacturedEngine implements Engine {
         "\nEngine Cylinders    : " + engineCylinders +
         "\nDrive Train         : " + driveTrain;
   }
-
+/*
   public static void main(String[] args) {
     ManufacturedEngine manu1 = new ManufacturedEngine();
     ManufacturedEngine manu2 = new ManufacturedEngine("Honda", new Date(112, 0, 3, 7, 13, 19), "H-Series", "H23A1", 4,
@@ -80,4 +91,5 @@ public class ManufacturedEngine implements Engine {
     System.out.println(manu1);
     System.out.println("\n" + manu2);
   }
+  */
 }
