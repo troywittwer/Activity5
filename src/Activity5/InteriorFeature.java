@@ -21,9 +21,9 @@ public class InteriorFeature implements Feature{
 
   @Override
   public String toString(){
-    return "Interior [" + interiorFeature + "]";
+    return "Interior [" + interiorFeature + " ]";
   }
-
+  /*
   public static void main(String[] args){
     InteriorFeature inter1 = new InteriorFeature();
     InteriorFeature inter2 = new InteriorFeature("Climate Control");
@@ -31,4 +31,5 @@ public class InteriorFeature implements Feature{
     System.out.println(inter1);
     System.out.println(inter2);
   }
+  */
 }

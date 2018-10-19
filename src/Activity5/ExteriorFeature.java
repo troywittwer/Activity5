@@ -21,9 +21,9 @@ public class ExteriorFeature implements Feature{
 
   @Override
   public String toString(){
-    return "Exterior [" + exteriorFeature + "]";
+    return "Exterior [" + exteriorFeature + " ]";
   }
-
+  /*
   public static void main(String[] args){
     ExteriorFeature exter1 = new ExteriorFeature();
     ExteriorFeature exter2 = new ExteriorFeature("Fog Lamps");
@@ -31,4 +31,5 @@ public class ExteriorFeature implements Feature{
     System.out.println(exter1);
     System.out.println(exter2);
   }
+  */
 }

@@ -32,8 +32,8 @@ public class Vehicle implements Engine, Chassis {
     vehicleMake = "Generic";
     vehicleModel = "Generic";
     vehicleFrame = new VehicleChassis();
-    vehicleType = "None";
-    driveTrain = "2WD: Two-Wheel Drive";
+    vehicleType = "Generic";
+    driveTrain = "Generic";
     vehicleEngine = new ManufacturedEngine();
   }
 

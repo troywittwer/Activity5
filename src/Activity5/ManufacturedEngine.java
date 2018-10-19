@@ -18,8 +18,8 @@ public class ManufacturedEngine implements Engine {
     engineMake = "Generic";
     engineModel = "Generic";
     engineCylinders = 0;
-    engineType = "85 AKI";
-    driveTrain = "2WD: Two-Wheel Drive";
+    engineType = "Generic";
+    driveTrain = "Generic";
   }
 
   ManufacturedEngine(String engManu, Date engManuDate, String engMake, String engModel,
